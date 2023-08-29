@@ -21,7 +21,7 @@ def getCustomer(customer_id):
         else:
             return buildResponse(404, {"Message": "customer_id: {0}s not found".format(customer_id)})
     except:
-        logger.exception("Do your custom error handling here. I am just gonna log it our here!!")
+        logger.exception("Error occured while retrieving a customer")
 
 
 def getCustomers():
@@ -38,7 +38,7 @@ def getCustomers():
         }
         return buildResponse(200, body)
     except:
-        logger.exception("Do your custom error handling here. I am just gonna log it our here!!")
+        logger.exception("Error occured while retrieving all customers ")
 
 
 def saveCustomer(requestBody):
@@ -51,7 +51,7 @@ def saveCustomer(requestBody):
         }
         return buildResponse(200, body)
     except:
-        logger.exception("Do your custom error handling here. I am just gonna log it our here!!")
+        logger.exception("Error occured while posting your data")
 
 
 def modifyCustomer(customer_id, updateKey, updateValue):
@@ -74,7 +74,7 @@ def modifyCustomer(customer_id, updateKey, updateValue):
         }
         return buildResponse(200, body)
     except:
-        logger.exception("Do your custom error handling here. I am just gonna log it our here!!")
+        logger.exception("Error occured while modifying your data")
 
 def deleteCustomer(customer_id):
     try:
@@ -91,7 +91,7 @@ def deleteCustomer(customer_id):
         }
         return buildResponse(200, body)
     except:
-        logger.exception("Custom error handling")
+        logger.exception("Error occured while deleting your data")
 
 
 def buildResponse(statusCode, body=None):
