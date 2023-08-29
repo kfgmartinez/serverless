@@ -19,7 +19,7 @@ def getCustomer(customer_id):
         if "Item" in response:
             return buildResponse(200, response["Item"])
         else:
-            return buildResponse(404, {"Message": "customer_id: {0}s not found".format(customer_id)})
+            return buildResponse(404, {f"Message": "customer_id: {customer_id}s not found"})
     except:
         logger.exception("Error occured while retrieving a customer")
 
