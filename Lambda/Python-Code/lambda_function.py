@@ -19,9 +19,7 @@ def lambda_handler(event, context):
     print(event)
     http_Method=event["httpMethod"]
     path = event["path"]
-    if http_Method == "GET" and path == healthPath:
-        response = buildResponse(200)
-    elif http_Method == "GET" and path == "/customer":
+    if http_Method == "GET" and path == "/customer":
         response = getCustomer(event["queryStringParameters"]["customer_id"])
     elif http_Method == "GET" and path == "/customers":
         response = getCustomers()
